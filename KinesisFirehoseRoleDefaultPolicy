@@ -1,0 +1,33 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "glue:GetTable",
+                "glue:GetTableVersion",
+                "glue:GetTableVersions"
+            ],
+            "Resource": [
+                "arn:aws:glue:us-east-1:734696811901:catalog",
+                "arn:aws:glue:us-east-1:734696811901:database/conversion",
+                "arn:aws:glue:us-east-1:734696811901:table/conversion/conversion_table"
+            ],
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:AbortMultipartUpload",
+                "s3:GetBucketLocation",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:ListBucketMultipartUploads",
+                "s3:PutObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::consumption-bucket-734696811901-feda0660/*",
+                "arn:aws:s3:::consumption-bucket-734696811901-feda0660"
+            ],
+            "Effect": "Allow"
+        }
+    ]
+}
